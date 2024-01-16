@@ -1,15 +1,20 @@
-<header>
-  <app-menu-bar></app-menu-bar>
-</header>
-
 <app-menu-title></app-menu-title>
 <div class="container__articles">
   <div class="articles__main">
-    <app-big-card></app-big-card>
+    <app-big-card
+      id="{{ articles[0].id }}"
+      photoCover="{{ articles[0].photoCover }}"
+      cardTitle="{{ articles[0].title }}"
+      cardDescription="{{ articles[0].description }}"
+    ></app-big-card>
   </div>
   <div class="articles__others">
-    <app-small-card></app-small-card>
-    <app-small-card></app-small-card>
-    <app-small-card></app-small-card>
+    <div *ngFor="let article of articles">
+      <app-small-card
+        id="{{ article.id }}"
+        photoCover="{{ article.photoCover }}"
+        cardTitle="{{ article.title }}"
+      ></app-small-card>
+    </div>
   </div>
 </div>
